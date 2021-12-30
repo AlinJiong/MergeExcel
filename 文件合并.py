@@ -69,7 +69,7 @@ def MergeExcel(filepath):
     data.drop_duplicates(subset=[data.columns[drop_name]], inplace=True)
 
     reset_name = int(input('请输入重新建立序号的列：(即序号、编号等)\n'))
-    data[data.columns[reset_name]] = range(len(data))
+    data[data.columns[reset_name]] = range(1, len(data) + 1)
 
     data.to_excel(writer, 'Sheet1', index=False)
     writer.save()
